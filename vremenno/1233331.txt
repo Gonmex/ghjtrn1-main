@@ -1,0 +1,4 @@
+pyside6-designer
+pyqt6-tools designer
+
+https://youtu.be/pjhuq33mFR0?si=yuww7r6HEasC2Gb7

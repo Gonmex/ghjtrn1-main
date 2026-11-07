@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainwindow</class>
+ <widget class="QMainWindow" name="mainwindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>825</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MDPlayer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btn_new">
+    <property name="geometry">
+     <rect>
+      <x>1440</x>
+      <y>910</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>photos/plus.png</normaloff>photos/plus.png</iconset>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="search_line">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>10</y>
+      <width>1091</width>
+      <height>51</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_settings">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>920</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>photos/settings.png</normaloff>photos/settings.png</iconset>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="colections_list">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>351</width>
+      <height>891</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="folders_list">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>80</y>
+      <width>1091</width>
+      <height>881</height>
+     </rect>
+    </property>
+    <property name="movement">
+     <enum>QListView::Movement::Static</enum>
+    </property>
+    <property name="viewMode">
+     <enum>QListView::ViewMode::ListMode</enum>
+    </property>
+   </widget>
+   <widget class="QVideoWidget" name="video_widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>-170</y>
+      <width>1621</width>
+      <height>951</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="download_widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>-990</x>
+      <y>790</y>
+      <width>1021</width>
+      <height>791</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>220</y>
+       <width>261</width>
+       <height>481</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QRadioButton" name="btn_form_aud">
+        <property name="text">
+         <string>Аудио</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="btn_form_360">
+        <property name="text">
+         <string>360</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="btn_form_480">
+        <property name="text">
+         <string>480</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="btn_form_720">
+        <property name="text">
+         <string>720</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="btn_form_1080">
+        <property name="text">
+         <string>1080</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="btn_form_2k">
+        <property name="text">
+         <string>2K</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="btn_form_4k">
+        <property name="text">
+         <string>4K</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="label_format">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>180</y>
+       <width>271</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Выберите качество(по умолчанию лучшее):</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_url">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>40</y>
+       <width>881</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>введите ссылку на видео(если видео не одно, то ссылку на весь альбом)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_set_name">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>100</y>
+       <width>881</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>введите название(не обязательно)</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="list_set_colections">
+     <property name="geometry">
+      <rect>
+       <x>435</x>
+       <y>221</y>
+       <width>561</width>
+       <height>481</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_collections">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>180</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Выберите коллекцию(не обязательно):</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_new_video">
+     <property name="geometry">
+      <rect>
+       <x>890</x>
+       <y>730</y>
+       <width>111</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Добавить</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btn_new_collection">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>750</y>
+      <width>321</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Создать коллекцию</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_stats">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>720</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>photos/table.png</normaloff>photos/table.png</iconset>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_settings" native="true">
+    <property name="geometry">
+     <rect>
+      <x>-300</x>
+      <y>-30</y>
+      <width>591</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <widget class="QComboBox" name="combo_box_color">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>80</y>
+       <width>201</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Тёмная</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Зелёная</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Светлая</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Неон</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QCheckBox" name="btn_autoplay">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>140</y>
+       <width>161</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>CheckBox</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_path">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>190</y>
+       <width>201</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_path">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>190</y>
+       <width>101</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Путь до папки</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_autoplay">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>140</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Автовоспроизведение</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_color">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>80</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Цвет приложения</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_settings">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>НАСТРОЙКИ</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_info_settings">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>400</y>
+       <width>161</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    color: rgba(0, 0, 0, 128);
+}</string>
+     </property>
+     <property name="text">
+      <string>MDPlayer</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSlider" name="slider_progress">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>700</y>
+      <width>391</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="slider_volume">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>650</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="table_stats">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>601</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+    </property>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+   </widget>
+   <zorder>search_line</zorder>
+   <zorder>btn_settings</zorder>
+   <zorder>colections_list</zorder>
+   <zorder>folders_list</zorder>
+   <zorder>btn_new</zorder>
+   <zorder>video_widget</zorder>
+   <zorder>download_widget</zorder>
+   <zorder>btn_new_collection</zorder>
+   <zorder>btn_stats</zorder>
+   <zorder>widget_settings</zorder>
+   <zorder>slider_progress</zorder>
+   <zorder>slider_volume</zorder>
+   <zorder>table_stats</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>33</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>PyQt6.QtMultimediaWidgets</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>
